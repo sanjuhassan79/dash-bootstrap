@@ -31,6 +31,88 @@
             max-width: 650px;
             margin: 35px auto;
         }
+        
+        .pieID {
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .pie {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin: 0 30px 30px 0;
+        }
+        
+        .pie::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: #EEE;
+            border-radius: 50%;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .pie::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+            margin: 220px auto;
+        }
+        
+        .slice {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            clip: rect(0px, 200px, 200px, 100px);
+            animation: bake-pie 1s;
+        }
+        
+        .slice span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            clip: rect(0px, 200px, 200px, 100px);
+        }
+        
+        .legend {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background: #FFF;
+            padding: 15px;
+            font-size: 13px;
+            box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
+        }
+        
+        .legend li {
+            width: 110px;
+            height: 1.25em;
+            margin-bottom: 0.7em;
+            padding-left: 0.5em;
+            border-left: 1.25em solid black;
+        }
+        
+        .legend em {
+            font-style: normal;
+        }
+        
+        .legend span {
+            float: right;
+        }
     </style>
 
 </head>
@@ -423,6 +505,184 @@
 
 
         </section>
+
+        <section class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-lg-10 ms-auto">
+                    <div class="row">
+                        <div class="col-lg-3 text-center shadow-lg p-3 ms-3 mb-5 bg-body rounded">
+                            <table class="table-condensed  table-striped w-100 h-100">
+                                <thead>
+                                    <tr>
+                                        <th colspan="7">
+                                            <span class="btn-group">
+                                            <a class="btn"><i class="icon-chevron-left"></i></a>
+                                            <a class="btn active">February 2012</a>
+                                            <a class="btn"><i class="icon-chevron-right"></i></a>
+                                        </span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Su</th>
+                                        <th>Mo</th>
+                                        <th>Tu</th>
+                                        <th>We</th>
+                                        <th>Th</th>
+                                        <th>Fr</th>
+                                        <th>Sa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="muted">29</td>
+                                        <td class="muted">30</td>
+                                        <td class="muted">31</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                        <td>17</td>
+                                        <td>18</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td class="btn-primary"><strong>20</strong></td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                        <td>23</td>
+                                        <td>24</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td class="muted">1</td>
+                                        <td class="muted">2</td>
+                                        <td class="muted">3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-lg-4 text-center shadow-lg p-3 ms-3 mb-5 bg-body rounded">
+
+
+
+                            <p>Weekly sales</p>
+
+                            <div class="pieID pie">
+
+                            </div>
+                            <ul class="pieID legend">
+                                <li>
+                                    <em>Humans</em>
+                                    <span>718</span>
+                                </li>
+                                <li>
+                                    <em>Dogs</em>
+                                    <span>531</span>
+                                </li>
+                                <li>
+                                    <em>Cats</em>
+                                    <span>868</span>
+                                </li>
+                                <li>
+                                    <em>Slugs</em>
+                                    <span>344</span>
+                                </li>
+                                <li>
+                                    <em>Aliens</em>
+                                    <span>1145</span>
+                                </li>
+                            </ul>
+
+
+
+
+
+                        </div>
+                        <div class="col-lg-4 text-center shadow-lg p-3 ms-3 mb-5 bg-body rounded">
+
+                            <div class="Daily d-flex justify-content-lg-between">
+                                <p class="fs-4 mb-0 fw-bold text-muted">Appointments</p>
+                                <a class="btn text-muted" href="#" role="button">...</a>
+
+                            </div>
+
+                            <div class="contact d-flex justify-content-lg-between mt-4 ">
+                                <div class="bloge d-flex ">
+                                    <img width="30px" height="30px" class="rounded-circle me-3" src="./img/circle-removebg-preview.png" alt="">
+
+                                    <div class=" text-start">
+                                        <p class="fs-6 mb-1">Chat with Carl and Ashley</p>
+                                        <p class="text-muted">Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris</p>
+                                    </div>
+
+                                </div>
+
+                                <p class="text-muted w-25">5m ago</p>
+
+                            </div>
+                            <div class="contact d-flex justify-content-lg-between mt-4 ">
+                                <div class="bloge d-flex ">
+                                    <img width="30px" height="30px" class="rounded-circle me-3" src="./img/circle-removebg-preview.png" alt="">
+
+                                    <div class=" text-start">
+                                        <p class="fs-6 mb-1">Chat with Carl and Ashley</p>
+                                        <p class="text-muted">Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris</p>
+                                    </div>
+
+                                </div>
+
+                                <p class="text-muted w-25">5m ago</p>
+
+                            </div>
+                            <div class="contact d-flex justify-content-lg-between mt-4 ">
+                                <div class="bloge d-flex ">
+                                    <img width="30px" height="30px" class="rounded-circle me-3" src="./img/circle-removebg-preview.png" alt="">
+
+                                    <div class=" text-start">
+                                        <p class="fs-6 mb-1">Chat with Carl and Ashley</p>
+                                        <p class="text-muted">Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris</p>
+                                    </div>
+
+                                </div>
+
+                                <p class="text-muted w-25">5m ago</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+
     </main>
 
 
@@ -432,13 +692,16 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="./app.js"></script>
 
 
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>
